@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1618520834 source:d:\work zone\acadmic\ecee\second year 2020\2nd term\labs\git_assigment\c version\assigment[student_listing]\main.c
+	<stdio.h>
+	<stdlib.h>
+	"struct.h"
+
+1618520938 d:\work zone\acadmic\ecee\second year 2020\2nd term\labs\git_assigment\c version\assigment[student_listing]\struct.h
+	<stdio.h>
+	<conio.h>
+

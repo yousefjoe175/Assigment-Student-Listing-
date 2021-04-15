@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <conio.h>
+
+typedef struct student
+{	//Till second name
+    char Name[30];
+    int ID;
+    //Day->Date[0],month->Date[1],year->Date[2]
+	int Date[3];
+	int Score;
+}student;
