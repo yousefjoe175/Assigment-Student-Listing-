@@ -1,3 +1,5 @@
+#ifndef STRUCT_H_
+#define STRUCT_H_
 #include <stdio.h>
 #include <conio.h>
 
@@ -9,3 +11,6 @@ typedef struct student
 	int Date[3];
 	int Score;
 }student;
+
+
+#endif
