@@ -44,6 +44,52 @@ void vInsertFromBegin(student* Student_List, student parameters){
     Student_List[0].Score = parameters.Score;
 }
 
+void vInsertFromEnd(student* Student_List, student parameters){
+    realloc( Student_List, (N+1) * sizeof(student));
+    
+    Student_List[N].ID = parameters.ID;
+    Student_List[N].Date[0] = parameters.Date[0];
+    Student_List[N].Date[1] = parameters.Date[1];
+    Student_List[N].Date[2] = parameters.Date[2];
+    //Student_List[0].Name = parameters.Name;
+    strcpy(Student_List[N].Name, parameters.Name);
+    Student_List[N].Score = parameters.Score;
+    N++;
+}
+
+void vInsertFromMiddle(student* Student_List, student parameters){
+    int i;
+    realloc( Student_List, (N+1) * sizeof(student));
+    if(N == 1){ //I have only one node, so it will put the new node at the end 
+        Student_List[N].ID = parameters.ID;
+        Student_List[N].Date[0] = parameters.Date[0];
+        Student_List[N].Date[1] = parameters.Date[1];
+        Student_List[N].Date[2] = parameters.Date[2];
+        //Student_List[0].Name = parameters.Name;
+        strcpy(Student_List[N].Name, parameters.Name);
+        Student_List[N].Score = parameters.Score;
+        
+    }else{
+        for(i=N; i>N/2; i--){
+            Student_List[i].ID = Student_List[i-1].ID;
+            Student_List[i].Date[0] = Student_List[i-1].Date[0];
+            Student_List[i].Date[1] = Student_List[i-1].Date[1];
+            Student_List[i].Date[2] = Student_List[i-1].Date[2];
+            //Student_List[i].Name = Student_List[i-1].Name; 
+            strcpy(Student_List[i].Name, Student_List[i-1].Name);
+            Student_List[i].Score = Student_List[i-1].Score;
+        }
+        Student_List[i].ID = parameters.ID;
+        Student_List[i].Date[0] = parameters.Date[0];
+        Student_List[i].Date[1] = parameters.Date[1];
+        Student_List[i].Date[2] = parameters.Date[2];
+        //Student_List[0].Name = parameters.Name;
+        strcpy(Student_List[i].Name, parameters.Name);
+        Student_List[i].Score = parameters.Score;
+    }
+    N++;
+}
+
 void vPrintList(student* Student_List){
     for(int i = 0; i<N; i++){
         printf("%d\t",Student_List[i].ID);
