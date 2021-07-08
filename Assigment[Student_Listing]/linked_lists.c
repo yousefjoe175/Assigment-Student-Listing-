@@ -1,4 +1,4 @@
-//#include"linked_lists.h"
+#include"linked_lists.h"
 #include "struct.h"
 
 struct node
@@ -13,7 +13,7 @@ struct node *current = NULL;
 struct node *prev = NULL;
 
 //function to store the input structure
-void StoringData( student * input){
+void StoringData( struct student* input){
 
 	 printf("Enter Name: \n");
 	 scanf("%s",input->Name);

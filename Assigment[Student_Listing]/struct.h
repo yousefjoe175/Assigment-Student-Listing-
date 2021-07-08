@@ -2,6 +2,7 @@
 #define STRUCT_H_
 #include <stdio.h>
 #include <conio.h>
+#include <stdlib.h>
 
 typedef struct student
 {	//Till second name

@@ -7,7 +7,7 @@
 
 #ifndef LINKED_LISTS_H_
 #define LINKED_LISTS_H_
-
+#include "struct.h"
 
 /**************************************************
  * Function Name:           StoringData
