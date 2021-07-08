@@ -5,18 +5,11 @@
  *      Author: User
  */
 
+#include "struct.h"
+
 #ifndef LINKED_LISTS_H_
 #define LINKED_LISTS_H_
 
-
-/**************************************************
- * Function Name:           StoringData
- * Function Description:    to receive the input data(structure elements) from user and store it
- *
- * Arguments:               pointer to structure where the input data will be saved
- * Return:                  void
- * ***********************************************/
-void StoringData( student * input);
 
 /**************************************************
  * Function Name:           sizeOfList
