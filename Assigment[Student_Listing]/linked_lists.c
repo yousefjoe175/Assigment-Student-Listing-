@@ -1,5 +1,6 @@
-#include"linked_lists.h"
-#include "struct.h"
+
+#include"linkedlists.h"
+
 
 struct node
 {
@@ -12,22 +13,7 @@ struct node *tail = NULL;
 struct node *current = NULL;
 struct node *prev = NULL;
 
-//function to store the input structure
-void StoringData( struct student* input){
 
-	 printf("Enter Name: \n");
-	 scanf("%s",input->Name);
-	 printf("Enter ID: \n");
-	 scanf("%d",&input->ID);
-	 printf("Enter Date of birth (Day): \n");
-	 scanf("%d",&input->Date[0]);
-	 printf("Enter Date of birth (Month): \n");
-	 scanf("%d",&input->Date[1]);
-	 printf("Enter Date of birth (Year): \n");
-	 scanf("%d",&input->Date[2]);
-	 printf("Enter score of the last year): \n");
-	 scanf("%d",&input->Score);
-}
 
 // calculate the list size
 int sizeOfList(void)
@@ -61,13 +47,13 @@ int sizeOfList(void)
 	   //start looping from the head until the last node
 	   while(ptr != NULL)
 	   {
-
-	 	 printf("%s",ptr->S.Name);
-	 	 printf("%d",ptr->S.ID);
+	 	 printf("%s\t",ptr->S.Name);
+	 	 printf("%d\t ",ptr->S.ID);
 	 	 printf("%d",ptr->S.Date[0]);
 	 	 printf("%d",ptr->S.Date[1]);
-	 	 printf("%d",ptr->S.Date[2]);
-	 	 printf("%d",ptr->S.Score);
+	 	 printf("%d\t",ptr->S.Date[2]);
+	 	 printf("%d\n",ptr->S.Score);
+	 	 printf("  =>  ");
 
 	      ptr = ptr->next;
 	   }
@@ -98,38 +84,45 @@ int sizeOfList(void)
 	      //point the head to the new first node
 	      head = link;
 
-
 }
+ // insert the node at the end of the list
+  void insertAtTheLast(student s){
 
-// insert the node at the end of the list
- void insertAtTheLast(student s){
+ 	   // Allocate memory for new node
+ 	   struct node *link1 = (struct node*) malloc(sizeof(struct node));
+ 	   //store data in the node
+ 	   	   for(int i=0;i<30;i++)
+ 	   	   {link1->S.Name[i] = s.Name[i];}
 
-	   // Allocate memory for new node
-	   struct node *link = (struct node*) malloc(sizeof(struct node));
-	   //store data in the node
-	   	   for(int i=0;i<30;i++)
-	   	   {link->S.Name[i] = s.Name[i];}
-
-	   	   link->S.ID=s.ID;
-	   	   link->S.Date[0]=s.Date[0];
-	   	   link->S.Date[1]=s.Date[1];
-	   	   link->S.Date[2]=s.Date[2];
-	   	   link->S.Score=s.Score;
-
-
-	   	   link->next = NULL;
-	   	   tail->next=link;
-	   	   tail=link;
+ 	   	   link1->S.ID=s.ID;
+ 	   	   link1->S.Date[0]=s.Date[0];
+ 	   	   link1->S.Date[1]=s.Date[1];
+ 	   	   link1->S.Date[2]=s.Date[2];
+ 	   	   link1->S.Score=s.Score;
 
 
-	   	   // If head is empty, create new list
-	   	   if(head==NULL)
-	   	   {
-	   	      head = link;
-	   	      return;
-	   	   }
+ 	   	   link1->next = NULL;
 
-}
+
+ 	   	   // If head is empty, create new list
+ 	   	   if(head==NULL)
+ 	   	   {
+ 	   	      head = link1;
+ 	   	      return;
+ 	   	   }
+
+    current = head;
+
+    // loop until reach the last node in the old list
+    while(current->next != NULL)
+    {
+ 	   current = current->next;
+    }
+
+    // Make the last node in the old list point to new node
+    current->next = link1;
+ }
+
 // insert depending on the given position
 void insertNodeInsideList(student s,int position){
 
@@ -148,11 +141,10 @@ int pos = 0;
 		   link->S.Date[1]=s.Date[1];
 		   link->S.Date[2]=s.Date[2];
 		   link->S.Score=s.Score;
-		//point the next pointer to the old head node
-		link->next = head;
-		//point the head to the new first node
+		//point the next pointer to NULL
+		link->next = NULL;
+		//point the head to the first node
 		head = link;
-
 		return;
 	}
 	//check if the array size smaller than in the input position
