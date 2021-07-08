@@ -24,6 +24,10 @@ student* PsCreateList(student parameters){
 }
 
 void vInsertFromBegin(student* Student_List, student parameters){
+    if(Student_List == NULL){
+        Student_List = PsCreateList(parameters);
+        return;
+    }
     realloc( Student_List, (N+1) * sizeof(student));
     N++;
     for(int i=N-1; i>0; i--){
@@ -45,6 +49,10 @@ void vInsertFromBegin(student* Student_List, student parameters){
 }
 
 void vInsertFromEnd(student* Student_List, student parameters){
+    /* if(Student_List == NULL){
+        Student_List = PsCreateList(parameters);
+        return;
+    }*/
     realloc( Student_List, (N+1) * sizeof(student));
     
     Student_List[N].ID = parameters.ID;
@@ -59,6 +67,10 @@ void vInsertFromEnd(student* Student_List, student parameters){
 
 void vInsertFromMiddle(student* Student_List, student parameters){
     int i;
+    /* if(Student_List == NULL){
+        Student_List = PsCreateList(parameters);
+        return;
+    }*/
     realloc( Student_List, (N+1) * sizeof(student));
     if(N == 1){ //I have only one node, so it will put the new node at the end 
         Student_List[N].ID = parameters.ID;
@@ -89,6 +101,7 @@ void vInsertFromMiddle(student* Student_List, student parameters){
     }
     N++;
 }
+
 
 void vPrintList(student* Student_List){
     for(int i = 0; i<N; i++){

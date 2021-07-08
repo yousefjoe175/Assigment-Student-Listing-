@@ -4,6 +4,8 @@
 #include <conio.h>
 #include <stdlib.h>
 
+
+
 typedef struct student
 {	//Till second name
     char Name[30];
@@ -13,5 +15,6 @@ typedef struct student
 	int Score;
 }student;
 
+student parameters;
 
 #endif

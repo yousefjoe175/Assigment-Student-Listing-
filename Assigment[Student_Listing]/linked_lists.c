@@ -1,5 +1,5 @@
 
-#include"linkedlists.h"
+#include"linked_lists.h"
 
 
 struct node
@@ -42,23 +42,19 @@ int sizeOfList(void)
 
 	   struct node *ptr = head;
 
-	   printf("[head] =>");
 
 	   //start looping from the head until the last node
 	   while(ptr != NULL)
 	   {
-	 	 printf("%s\t",ptr->S.Name);
-	 	 printf("%d\t ",ptr->S.ID);
-	 	 printf("%d",ptr->S.Date[0]);
-	 	 printf("%d",ptr->S.Date[1]);
-	 	 printf("%d\t",ptr->S.Date[2]);
-	 	 printf("%d\n",ptr->S.Score);
-	 	 printf("  =>  ");
+	 	  printf("%d\t",ptr->S.ID);
+       	 printf("%s \t\t",ptr->S.Name);
+        printf("%d/%d/%d \t",ptr->S.Date[0],ptr->S.Date[1],ptr->S.Date[2]);
+        printf("%d\n",ptr->S.Score);
 
 	      ptr = ptr->next;
 	   }
 
-	   printf(" [null]\n");
+
 
 
 }
