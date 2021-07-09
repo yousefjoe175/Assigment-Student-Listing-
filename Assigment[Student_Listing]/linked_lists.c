@@ -2,11 +2,8 @@
 #include"linked_lists.h"
 
 
-struct node
-{
-   struct student S;
-   struct node *next;
-};
+
+
 
 struct node *head = NULL;
 struct node *tail = NULL;

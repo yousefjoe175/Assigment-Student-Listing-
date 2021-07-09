@@ -11,6 +11,15 @@
 #define LINKED_LISTS_H_
 #include "struct.h"
 
+struct node
+{
+   struct student S;
+   struct node *next;
+};
+
+typedef struct node Node;
+
+
 /**************************************************
  * Function Name:           sizeOfList
  * Function Description:    to sum the number of nodes in the list
